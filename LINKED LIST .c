@@ -1,21 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-// structure of node
 struct Node {
     int data;
     struct Node* next;
 };
-
-// function to create a new node
 struct Node* createNode(int value) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     newNode->data = value;
     newNode->next = NULL;
     return newNode;
 }
-
-// function to create linked list
 struct Node* createList(int n) {
     struct Node *head = NULL, *temp = NULL, *newNode = NULL;
     int data, i;
@@ -36,8 +30,6 @@ struct Node* createList(int n) {
     }
     return head;
 }
-
-// function to display linked list
 void displayList(struct Node* head) {
     struct Node* temp = head;
     printf("\nLinked List: ");
@@ -47,8 +39,6 @@ void displayList(struct Node* head) {
     }
     printf("NULL\n");
 }
-
-// main function
 int main() {
     int n;
     struct Node* head = NULL;
