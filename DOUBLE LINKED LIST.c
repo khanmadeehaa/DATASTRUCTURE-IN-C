@@ -1,14 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-// Node structure for doubly linked list
 struct Node {
     int data;
     struct Node* prev;
     struct Node* next;
 };
-
-// Function to create a new node
 struct Node* createNode(int value) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     newNode->data = value;
@@ -16,8 +12,6 @@ struct Node* createNode(int value) {
     newNode->next = NULL;
     return newNode;
 }
-
-// Function to create doubly linked list with user input
 struct Node* createList(int n) {
     struct Node* head = NULL;
     struct Node* temp = NULL;
@@ -31,7 +25,7 @@ struct Node* createList(int n) {
         newNode = createNode(value);
 
         if (head == NULL) {
-            head = newNode; // First node
+            head = newNode; 
         } else {
             temp->next = newNode;
             newNode->prev = temp;
@@ -42,7 +36,6 @@ struct Node* createList(int n) {
     return head;
 }
 
-// Function to display doubly linked list
 void displayList(struct Node* head) {
     struct Node* temp = head;
     if (head == NULL) {
